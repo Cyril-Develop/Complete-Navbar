@@ -1,0 +1,171 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+li{
+    list-style: none;
+}
+
+/* HEADER */
+
+header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    padding: 0 40px;
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+}
+
+h1{
+    font-size: clamp(2rem, 10vw, 5rem);
+}
+
+/* BTN NAV */
+
+.checkbox-toggler {
+    display: none;
+}
+
+.nav_btn {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.nav_icon {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background: #333;
+}
+
+.nav_icon::before, 
+.nav_icon::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #333;
+    position: absolute;
+    transition: all 0.2s;
+}
+
+.nav_icon::before {
+    transform: translateY(-8px);
+}
+
+.nav_icon::after {
+    transform: translateY(8px);
+}
+
+.checkbox-toggler:checked + .nav_btn .nav_icon {
+    background-color: transparent;
+}
+
+.checkbox-toggler:checked + .nav_btn .nav_icon::before {
+    transform: translateY(0px) rotate(135deg);
+}
+.checkbox-toggler:checked + .nav_btn .nav_icon::after {
+    transform: translateY(0px) rotate(-135deg);
+}
+
+/* NAV */
+
+.nav_list{
+    display: flex;
+}
+
+.nav_list_item{
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    height: 79px;
+    line-height: 79px;
+}
+
+.nav_list_item a{
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 0 20px;
+}
+
+.nav_list_item:hover{
+    background-color: #ddd5d5;
+}
+
+/* MAIN */
+
+main div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    font-size: clamp(2rem, 10vw, 5rem);
+}
+
+#home{
+    background-color:lightgreen;
+}
+
+#ourWork{
+    background-color:darkseagreen;
+}
+
+#contact{
+    background-color: skyblue;
+}
+
+#about{
+    background-color:darkgray;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 750px) {
+
+    header{
+        padding: 0 20px;
+    }
+
+    .nav{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: transform .2s ease-in-out;
+    }
+
+    .checkbox-toggler:checked ~ .nav{
+      transform: translateX(0);
+    }
+    
+    .nav_btn{
+        display: flex;
+    }
+
+    .nav_list{
+        flex-direction: column;
+        background-color: #fff;
+    }
+    
+    .nav_list_item{
+        text-align: center;
+        height: 60px;
+        line-height: 60px;  
+    }
+    
+}
