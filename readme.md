@@ -1,6 +1,6 @@
 # Complete Navbar CSS
 
-![screenshot](./screenshot/screenshot.png)
+![screenshot](./screenshot/screenshot.jpg)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Cyril-Develop/Complete-Navbar?style=for-the-badge)
 
